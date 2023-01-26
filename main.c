@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+
+
 struct Livre
 {
 	char titre[20];
@@ -8,6 +10,8 @@ struct Livre
 	int year;
 	
 };
+
+typedef struct Livre Livre;
 
 void presentation();
 
@@ -22,7 +26,11 @@ int main(void)
 	return 0;
 }
 
-void presentation(struct Livre object)
+void presentation(Livre object)
 {
-	printf("Le nom du livre est %s, l'auteur est %s et il date de %d.\n", object.titre, object.auteur, object.year);
+	printf("==================\n");
+	printf("Auteur: %s\n", object.auteur);
+	printf("Titre : %s\n", object.titre);
+	printf("Annee : %d\n", object.year);
+	printf("==================\n");
 }
