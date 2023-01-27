@@ -1,42 +1,23 @@
 #include <stdio.h>
 
-typedef struct 
-	{
-		char name[15];
-		int age;
-	} Personne;
-
-int estMajeur(Personne personne);
-void sePresenter(Personne personne);
+void swap(int* x, int* y);
 
 int main(void)
 {
-	Personne personnes[2];
-	int nbPersonnes = 0;
+	int n1 = 12;
+	int n2 = 81;
+	printf("n1 = %d | n2 = %d\n", n1, n2);
 	
-	strcpy(personnes[0].name, "Hemdy");
-	personnes[0].age = 13;
-	nbPersonnes += 1;
+	printf("Swap...\n");
+	swap(&n1, &n2);
 	
-	strcpy(personnes[1].name, "Soulaymane");
-	personnes[1].age = 19;
-	nbPersonnes += 1;
-	
-	for (int i = 0; i < nbPersonnes/* nbPersonnes est exclu de la liste. */; i++)
-		sePresenter(personnes[i]);
-	
+	printf("n1 = %d | n2 = %d\n", n1, n2);
 	return 0;
 }
 
-int estMajeur(Personne personne)
+void swap(int* x, int* y)
 {
-	return personne.age >= 18;
-}
-
-void sePresenter(Personne personne)
-{
-	printf("=======================================\n");
-	printf("Je m'appelle %s et j'ai %d ans.\n", personne.name, personne.age);
-	printf("estMajeur: %d\n", estMajeur(personne));
-	printf("=======================================\n");
+	int tmp = *x;
+	*x = *y;
+	*y = tmp;
 }
