@@ -3,12 +3,17 @@
 
 int main(void)
 {
-	int* pnum = (int*) malloc(sizeof(int));
-	*pnum = 15;
+	FILE* file;
 	
-	printf("Value   : %d\n", *pnum);
-	printf("Adresse : %x\n", pnum);
+	file = fopen("read.txt", "r");
+	if (file == NULL)
+	{
+		printf("Error Fopen\n");
+		return 1;
+	}
 	
-	free(pnum);
+	char c;
+	while((c = fgetc(file)) != EOF)
+		printf("%c", c);
 	return 0;
 }
