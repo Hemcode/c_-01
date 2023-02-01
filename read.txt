@@ -1,1 +1,0 @@
-Echo est une commande qui ecrit dans un terminal.
